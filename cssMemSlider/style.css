@@ -13,7 +13,7 @@ body {
     width: 700px;
     margin: 100px auto;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     
 }
 
@@ -21,4 +21,11 @@ body {
     height: 100%;
     width: 500%;
     display: flex;
+}
+
+.container .slides > img {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    object-fit: cover;
 }
