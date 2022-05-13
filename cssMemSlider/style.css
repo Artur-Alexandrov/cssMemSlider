@@ -1,3 +1,7 @@
+html {
+    font-size: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,20 +13,22 @@ body {
 }
 
 input {
-    display: none;
+    visibility: hidden;
 }
 
+
+
 .container {
-    height: 700px;
-    width: 700px;
-    margin: 50px auto;
+    height: 70rem;
+    width: 70rem;
+    margin: 5rem auto;
     overflow: hidden;
     position: relative;
-    perspective: 1000px;
+    perspective: 100rem;
 }
 
 .container .slides {
-    /* height: 100%; */
+    height: 100%;
     width: 500%;
     display: flex;
 }
@@ -43,21 +49,21 @@ input {
 .controls {
     position: relative;
     margin: 0 auto;
-    height: 50px;
-    width: 200px;
+    height: 5rem;
+    width: 20rem;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
 }
 
 .controls > label {
-    height: 25px;
-    width: 25px;
+    height: 2.5rem;
+    width: 2.5rem;
     background-color: white;
     border-radius: 50%;
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 .controls > label:hover {
@@ -70,8 +76,8 @@ input {
 
 .slides_name > .content {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     background-color: #ad1515d5;
     color: hsl(58, 100%, 51%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -82,6 +88,7 @@ input {
 
 #switch1:checked ~ .container .slides img:nth-child(1) {
     margin-left: -0%;
+    
 }
 #switch2:checked ~ .container .slides img:nth-child(2) {
     margin-left: -20%;
@@ -101,7 +108,9 @@ input {
 #switch4:checked ~ .container .slides img:nth-child(4), 
 #switch5:checked ~ .container .slides img:nth-child(5) {
 
-    transform: rotateX(0deg);
+    transform: rotateX(360deg);
+    transition: 1s;
+    
 }
 #switch1:checked ~ .container .slides_name .content:nth-child(1), 
 #switch2:checked ~ .container .slides_name .content:nth-child(2),
@@ -110,4 +119,37 @@ input {
 #switch5:checked ~ .container .slides_name .content:nth-child(5) {
 
     transform: translateX(0);
+    transition: 1.5s;
+}
+
+@media screen and (max-width:767px) {
+
+    .container {
+        height: 54rem;
+        width: 54rem;
+       
+    }
+
+    .container .slides > img {
+        width: 54rem;
+        height: 54rem;
+    }
+}
+
+@media screen and (max-width:540px) {
+
+    .container {
+        height: 32rem;
+        width: 32rem;
+       
+    }
+
+    .container .slides > img {
+        width: 32rem;
+        height: 32rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
 }
