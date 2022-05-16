@@ -1,0 +1,161 @@
+html {
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ded3d3;
+    overflow: hidden;
+}
+
+input {
+    visibility: hidden;
+}
+
+
+
+.container {
+    height: 70rem;
+    width: 70rem;
+    margin: 1rem auto;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.container .slides {
+    height: 100%;
+    width: 500%;
+    display: flex;
+}
+
+.container .slides > img {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    object-fit: cover;
+    
+}
+
+.container .slides > img ~ img {
+    transform: rotateX(-65deg);
+}
+
+
+.controls {
+    position: relative;
+    margin: 0 auto;
+    height: 5rem;
+    width: 20rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.controls > label {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.controls > label:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.5);
+    background-color: aqua;
+    
+}
+
+.slides_name > .content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #ad1515d5;
+    color: hsl(58, 100%, 51%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    transform: translateX(467px);
+    transition: .3s;
+}
+
+#switch1:checked ~ .container .slides img:nth-child(1) {
+    margin-left: -0%;
+    
+}
+#switch2:checked ~ .container .slides img:nth-child(2) {
+    margin-left: -20%;
+}
+#switch3:checked ~ .container .slides img:nth-child(3) {
+    margin-left: -40%;
+}
+#switch4:checked ~ .container .slides img:nth-child(4) {
+    margin-left: -60%;
+}
+#switch5:checked ~ .container .slides img:nth-child(5) {
+    margin-left: -80%;
+}
+#switch1:checked ~ .container .slides img:nth-child(1), 
+#switch2:checked ~ .container .slides img:nth-child(2),
+#switch3:checked ~ .container .slides img:nth-child(3), 
+#switch4:checked ~ .container .slides img:nth-child(4), 
+#switch5:checked ~ .container .slides img:nth-child(5) {
+
+    transform: rotateX(360deg);
+    transition: 1s;
+    
+}
+#switch1:checked ~ .container .slides_name .content:nth-child(1), 
+#switch2:checked ~ .container .slides_name .content:nth-child(2),
+#switch3:checked ~ .container .slides_name .content:nth-child(3), 
+#switch4:checked ~ .container .slides_name .content:nth-child(4), 
+#switch5:checked ~ .container .slides_name .content:nth-child(5) {
+
+    transform: translateX(0);
+    transition: 1.5s;
+}
+
+
+@media screen and (max-width:767px) {
+
+    .container {
+        height: 54rem;
+        width: 54rem;
+       
+    }
+
+    .container .slides > img {
+        width: 54rem;
+        height: 54rem;
+    }
+}
+
+@media screen and (max-width:539px) {
+
+    .container {
+        height: 32rem;
+        width: 32rem;
+       
+    }
+
+    .container .slides > img {
+        width: 32rem;
+        height: 32rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .controls {
+        width: 15rem;
+        height: 4rem;
+    }
+}
